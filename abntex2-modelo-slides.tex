@@ -27,24 +27,26 @@
 
 % Apresentações em widescreen. Outros valores possíveis: 1610, 149, 54, 43 e 32.
 % Por padrão, as apresentações são no formato 4:3 (sem o aspectratio).
+\PassOptionsToPackage{hyphens}{url}
 \documentclass[aspectratio=169]{beamer}	 	
 
-\usetheme{Pittsburgh}
+\usetheme{Frankfurt}
+%\usetheme{Pittsburgh}
 \usecolortheme{default}
 \usefonttheme[onlymath]{serif}			% para fontes matemáticas
 % Enconte mais temas e cores em http://www.hartwork.org/beamer-theme-matrix/ 
 % Veja também http://deic.uab.es/~iblanes/beamer_gallery/index.html
 
 % Customizações de Cores: fg significa cor do texto e bg é cor do fundo
-\setbeamercolor{normal text}{fg=black}
-\setbeamercolor{alerted text}{fg=red}
-\setbeamercolor{author}{fg=blue}
-\setbeamercolor{institute}{fg=blue}
-\setbeamercolor{date}{fg=blue}
-\setbeamercolor{frametitle}{fg=red}
-\setbeamercolor{framesubtitle}{fg=brown}
-\setbeamercolor{block title}{bg=blue, fg=white}		%Cor do título
-\setbeamercolor{block body}{bg=gray, fg=darkgray}	%Cor do texto (bg= fundo; fg=texto)
+%\setbeamercolor{normal text}{fg=black}
+%\setbeamercolor{alerted text}{fg=red}
+%\setbeamercolor{author}{fg=blue}
+%\setbeamercolor{institute}{fg=blue}
+%\setbeamercolor{date}{fg=blue}
+%\setbeamercolor{frametitle}{fg=red}
+%\setbeamercolor{framesubtitle}{fg=brown}
+%\setbeamercolor{block title}{bg=blue, fg=white}		%Cor do título
+%\setbeamercolor{block body}{bg=gray, fg=darkgray}	%Cor do texto (bg= fundo; fg=texto)
 
 % ---
 % PACOTES
@@ -115,7 +117,7 @@
 
 \begin{figure}
   \centering
-  \includegraphics[width=0.8\textwidth]{paisandu.png}
+  \includegraphics[width=0.75\textwidth]{paisandu.png}
   \caption{Ambiente de Trabalho \cite{sp2020}}
 \end{figure}
 
@@ -129,9 +131,10 @@
 \item Operação remota de um robô SAR exige grande esforço cognitivo de dois operadores \cite{Robin2004}
 \item Membros da equipe de busca e salvamento se acostumam rapidamente ao agente robótico \cite{fin2004}
 \item Maior parte da comunicação é não verbal \cite{fin2004}
-\item Melhoria no relacionamento homem máquina a partir de pequenas modificações \cite{habib2011}
+\item Melhoria no relacionamento homem máquina a partir de pequenas modificações \cite{akgun2022using}
 \item A resposta SAR se alonga no tempo \cite{krui2015}
 \item Capacidade de navegação autônoma \cite{tardioli2016}
+\item Os autores chamam a atenção para a necessidade do robô se relacionar com as vítimas, porém reconhecem que se trata de um assunto a ser abordado em outro momento.
 \end{itemize}
 \end{frame}
 % ----------------- NOVO SLIDE --------------------------------
@@ -142,10 +145,11 @@
 \framesubtitle{Requisitos}
 \begin{itemize}
 \item O robô deverá construir mapas e se localizar no mapa construído;
-\item O robô deverá operar em vários módulos: remotamente operado, semi-autônomo, autônomo;
+\item O robô deverá se relacionar com a equipe de salvamento;
 \item O robô deverá captar sinais de áudio que sejam pistas da localização das vítimas;
 \item O robô deverá reconhecer gestos simples como: siga, pare, esquerda, direita;
 \item O robô deverá possuir um meio de comunicação não verbal que seja visível no ambiente da Zona Quente;
+\item O robô deverá sinalizar o sua emoção;
 \item O robô deverá reconhecer comandos de voz simples: siga, pare, esquerda, direita;
 \end{itemize}
 \end{frame}
@@ -165,61 +169,39 @@
 % ----------------- NOVO SLIDE --------------------------------
 \begin{frame}
 \frametitle{Modelo}
-\framesubtitle{Capacidades Sociais}
-\begin{itemize}
-\item Compreender gestos
-\item Exibir emoções a partir da fita de led
-\end{itemize}
+\framesubtitle{Diagrama de Componentes}
+
+\begin{figure}
+  \centering
+  \includegraphics[height=0.7\textheight]{modelo.png}
+  \caption{Modelo Agente Robótico baseado em \cite{kim2002implementation}}
+\end{figure}
+
 \end{frame}
 % ----------------- NOVO SLIDE --------------------------------
-
+\section{Arquitetura}
 \begin{frame}
-\frametitle{Modelo}
-\framesubtitle{Área de Aplicação}
-\begin{itemize}
-\item Espaços confinados
-\item Espaços confinados de dimensão menor que um ser humano
-\end{itemize}
+\frametitle{Arquitetura}
+
+
+\begin{figure}
+  \centering
+  \includegraphics[height=0.7\textheight]{4d-rcs.png}
+  \caption{Arquitetura 4D/RCS \cite{albus2005rcs}}
+\end{figure}
+
 \end{frame}
 % ----------------- NOVO SLIDE --------------------------------
+\section{Conclusão}
 
 \begin{frame}
-\frametitle{Modelo}
-\framesubtitle{Funcionalidade}
+\frametitle{Conclusão}
 \begin{itemize}
-\item Busca e Salvamento
-\item Mapeamento da região
-\item Descobrimento de vítimas
-\end{itemize}
-\end{frame}
-% ----------------- NOVO SLIDE --------------------------------
+\item Equipes SAR podem se beneficiar de agentes robóticos cognitivos, seja com o aumento da autonomia do agente, e consequente redução da carga cognitiva de seus operadores, seja com maior aumento do relacionamento homem-robô, tornando a equipe mais eficiente.
 
-\begin{frame}
-\frametitle{Modelo}
-\framesubtitle{Autonomia e Inteligência}
-\begin{itemize}
-\item Elaborar o próprio caminho
-\item Desviar de obstáculos
-\end{itemize}
-\end{frame}
-% ----------------- NOVO SLIDE --------------------------------
+\item Ainda que possuam restrições quando a aparência, foco na missão, pequenos ajustes e treinamento da equipe representam ganhos significativos na inteiração homem-robô.
 
-\begin{frame}
-\frametitle{Modelo}
-\framesubtitle{Consciência Situacional}
-\begin{itemize}
-\item Se localizar no mapa criado
-\item Verificar se o avanço é possível
-\item Sinalizar por ajuda
-\end{itemize}
-\end{frame}
-% ----------------- NOVO SLIDE --------------------------------
-
-\begin{frame}
-\frametitle{Modelo}
-\framesubtitle{Comportamento Temporal}
-\begin{itemize}
-\item A
+\item Mais estudos são necessários quanto ao relacionamento do robô com as vítimas. 
 \end{itemize}
 \end{frame}
 % ----------------- NOVO SLIDE --------------------------------
