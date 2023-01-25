@@ -30,7 +30,7 @@
 \documentclass[
 	% -- opções da classe memoir --
 	article,			% indica que é um artigo acadêmico
-	11pt,				% tamanho da fonte
+	10pt,				% tamanho da fonte
 	oneside,			% para impressão apenas no recto. Oposto a twoside
 	a4paper,			% tamanho do papel. 
 	% -- opções da classe abntex2 --
@@ -236,18 +236,21 @@ Robôs de Busca e Salvamento vem sendo utilizados desde a resposta ao atentado n
 \section{Introdução}
 Robôs de busca e salvamento vem sendo usados desde a resposta ao atentado contra o World Trade Center \cite{Robin2004}. Os robôs são uma ferramenta valiosa para os times de busca e salvamento pois, podem adentrar espaços confinados pequenos demais para humanos, ou que sejam tóxicos, a fim de localizar espaços vazios que possam conter sobreviventes \cite{Robin2004}.
 
-Ainda que no Brasil terremotos capazes de causar danos estruturais as construções e atentados da magnitude do World Trade Center não ocorram, equipes de busca e salvamento (SAR) são empregadas em casos de: desabamento por chuvas \cite{serrana2022}, rompimento de barragens \cite{bruma2019}, desabamento de construções irregulares \cite{rio2021}, ou que possuam problemas de manutenção \cite{sp2020}.
+Ainda que no Brasil terremotos capazes de causar danos estruturais as construções e atentados da magnitude do World Trade Center sejam raros, equipes de busca e salvamento (SAR) são empregadas em casos de: desabamento por chuvas \cite{serrana2022}, rompimento de barragens \cite{bruma2019} entre outros.
+
+%desabamento de construções irregulares \cite{rio2021}, ou que possuam problemas de manutenção \cite{sp2020}.
 
 %Em \cite{Robin2004} é feita uma análise da utilização dos robôs na resposta ao atentado contra o World Trade Center. Como se tratam de robôs operados remotamente sem nenhuma cognição, sobretudo adaptados de usos militares, nota-se a grande carga de trabalho que é depositada entre o condutor do robô, responsável pela movimentação do robô, e o Analista da Situação, responsável por interpretar os dados vindos dos sensores do robô. Ainda que importantes na operação de busca e salvamento como pode ser visto em  \cite{akgun2022using} a falta de componentes, sobretudo componentes não verbais, que permitam à equipe avaliar a situação do robô pode causar desconfiança no time.
 
-O presente trabalho tem como objetivo elaborar um modelo de robô com elementos cognitivos, a fim de permitir uma relação entre homem e máquina de maneira cooperativa no ambiente de busca e salvamento. Está estruturado da maneira que se segue:  
-
-\begin{itemize}
-\item Sessão 2: caracteriza o ambiente de trabalho e a equipe que atuará junto ao componente robótico
-\item Sessão 2: é feita uma revisão bibliográfica
-\item Sessão 3: é proposto um modelo com componentes cognitivos para um robô de busca e salvamento
-\item Sessão 4: uma conclusão sobre a empregabilidade do modelo
-\end{itemize}
+O presente trabalho tem como objetivo elaborar um modelo de robô com elementos cognitivos, a fim de permitir uma relação entre homem e máquina de maneira cooperativa no ambiente de busca e salvamento. 
+%Está estruturado da maneira que se segue:  
+%
+%\begin{itemize}
+%\item Sessão 2: caracteriza o ambiente de trabalho e a equipe que atuará junto ao componente robótico
+%\item Sessão 3: é feita uma revisão bibliográfica
+%\item Sessão 4: é proposto um modelo com componentes cognitivos para um robô de busca e salvamento
+%\item Sessão 5: A conclusão do artigo
+%\end{itemize}
 
 \section{Ambiente de Trabalho}
 O local de um desabamento é caracterizado por possuir superfícies irregulares, riscos físicos como: vergalhões, pedaços de concreto que podem se desprender, poços, pó, falta de iluminação, movimentação das partes sedimentadas ocasionando um segundo desabamento. Além disso, podem haver riscos biológicos ligados as vítimas bem como pelo rompimento de canos de esgoto. Acúmulo de gás, locais com pouco oxigênio e riscos relacionados a incêndio e curtos elétricos  \cite{Robin2004}.
@@ -269,9 +272,9 @@ O local de um desabamento é caracterizado por possuir superfícies irregulares,
 
 \section{Revisão Bibliográfica}
 
-Em \cite{Robin2004} é feita uma análise da resposta ao atentado as Torres Gêmeas em 11 de setembro de 2001 com foco na equipe que opera remotamente o robôs. O primeiro ponto a se ressaltar é que são necessários dois operadores humanos para conseguir operar um robô dada a demanda cognitiva. Um operador é responsável pela movimentação do robô. Sendo responsável por planejar um caminho, desviar de obstáculos. Vale lembrar que para além dos aspectos ditos na sessão anterior: poeira, falta de luz, geometria confusa as câmeras do robô ficam em um posição em relação ao solo muito diferente dos olhos humanos o que pode gerar percepções incorretas do operador. Além de obstáculos que estejam fora do campo de visão e podem acabar prendendo o robô.  Outro operador é responsável por interpretar e fundir os sinais coletados pelo robô. Esse operador está ativamente buscando traços de vítimas, fazendo o mapa do avanço do equipamento,bem como mapeando os riscos a serem enfrentados para que a equipe de salvamento ao seguir o caminho do robô. Nota-se duas tarefas de alta demanda cognitiva. A primeira relacionada ao planejamento do caminho, e desvio do obstáculos, e a outra de criação da consciência situacional do ambiente em que o dispositivo está inserido. Se o robô for capaz de assumir uma dessas tarefas, por exemplo planejamento do caminho, pode-se reduzir o número de operadores, ou ainda que se mantenham o mesmo número a redução na demanda cognitiva de uma das tarefas pode aumentar a eficiência da outra.
+Em \cite{Robin2004} é feita uma análise da resposta ao atentado as Torres Gêmeas em 11 de setembro de 2001 com foco na equipe que opera remotamente o robôs. O primeiro ponto a se ressaltar é que são necessários dois operadores humanos para conseguir operar um robô dada a demanda cognitiva. Um operador é responsável pela movimentação do robô planejando o caminho e desviando de obstáculos. Vale lembrar que para além dos aspectos ditos na sessão anterior: poeira, falta de luz, geometria confusa, as câmeras do robô ficam em um posição em relação ao solo muito diferente dos olhos humanos o que pode gerar percepções incorretas do operador, além de obstáculos que estejam fora do campo de visão e podem acabar prendendo o robô.  Outro operador é responsável por interpretar e fundir os sinais coletados pelo robô. Esse operador está ativamente buscando traços de vítimas, fazendo o mapa do avanço do equipamento,bem como mapeando os riscos a serem enfrentados para que a equipe de salvamento ao seguir o caminho do robô. Nota-se duas tarefas de alta demanda cognitiva. A primeira relacionada ao planejamento do caminho, e desvio do obstáculos, e a outra de criação da consciência situacional do ambiente em que o dispositivo está inserido. Se o robô for capaz de assumir uma dessas tarefas, por exemplo, planejamento do caminho, pode-se reduzir o número de operadores, ou ainda que se mantenham o mesmo número a redução na demanda cognitiva de uma das tarefas pode aumentar a eficiência da outra.
 
-Durante um experimento para avaliar a capacidade de um robô evitar obstáculos em \cite{fin2004} observou-se que rapidamente o robô operado remotamente passou a ser uma presença virtual do posto de comando, externo a área de desabamento. Dada a melhor qualidade do microfone e alto-falantes dos robô a equipe de resgate passou a se comunicar com o posto de comando através do robô. Porém não somente isso foi observado, a equipe também começou a gesticular e apontar em direções que gostariam que o robô observasse. Foi observado também que a equipe de socorro se aproximava do robô ao falar com ele, e pelo menos em um momento procurou inteiração olho a "olho" com o robô. O operador também foi obrigado a acenar com a "cabeça" do robô para confirmar que havia entendido uma mensagem dos socorristas. Tanto "olho" quanto "cabeça" são colocados aqui entre aspas pois, o robô utilizado não possuía características antropomórficas, na verdade o autor o descreve como uma caixa de sapato. Ainda que não seja antropomórfico o robô possuía características que tornaram possíveis para um ser humano identificar um rosto e tentar comunicação não verbal com o dispositivo.
+Durante um experimento para avaliar a capacidade de um robô evitar obstáculos em \cite{fin2004} observou-se que rapidamente o robô operado remotamente passou a ser uma presença virtual do posto de comando externo a área de desabamento. Dada a melhor qualidade do microfone e alto-falantes dos robô a equipe de resgate passou a se comunicar com o posto de comando através do robô. Porém, não somente isso foi observado, a equipe também começou a gesticular e apontar em direções que gostariam que o robô observasse. Foi observado também que a equipe de socorro se aproximava do robô ao falar com ele, e pelo menos em um momento procurou inteiração olho a "olho" com o robô. O operador também foi obrigado a acenar com a "cabeça" do robô para confirmar que havia entendido uma mensagem dos socorristas. Tanto "olho" quanto "cabeça" são colocados aqui entre aspas pois, o robô utilizado não possuía características antropomórficas, na verdade o autor o descreve como uma caixa de sapato. Ainda que não seja antropomórfico o robô possuía características que tornaram possíveis para um ser humano identificar um rosto e tentar comunicação não verbal com o dispositivo.
 
 %\begin{figure}
 %\centering
@@ -282,7 +285,7 @@ Durante um experimento para avaliar a capacidade de um robô evitar obstáculos 
 
 %Dois aspectos chamam a atenção em \cite{fin2004}. Ainda que a qualidade do rádio tenha sido o motivador para iniciar a comunicação via robô a comunicação não verbal foi mais abundante no fim do experimento. Isso ocorre porquê o ambiente de trabalho dessas equipes costuma ser bastante ruidoso, o que também nos indica que o robô deve ser capaz de reconhecer uma gama de gestos. O outro aspecto é a não necessidade de características antropomórficas para que haja uma comunicação homem máquina. Desde que haja algo que os demais membros do time possam reconhecer, ainda que de maneira bastante abstrata, como uma face é o suficiente para a comunicação.
 
-De fato em \cite{akgun2022using} uma melhoria na iteração entre o time humano e o time de robôs é conseguido a partir de uma fita de leds que indica o humor do robô. A equipe que acompanha os robôs nos times de busca e salvamento muitas vezes não sabe se o robô está preso, e precisa de ajuda, ou apenas está performando alguma tarefa. É importante ressaltar que em um ambiente estressante essa dúvida se transforma em desconfiança o que pode reduzir a iteração homem máquina.
+De fato em \cite{akgun2022using} uma melhoria na iteração entre o time humano e o time de robôs é conseguido a partir de uma fita de leds que indica o humor do robô. A equipe que acompanha os robôs nos times de busca e salvamento muitas vezes não sabe se o robô está preso, e precisa de ajuda, ou apenas está performando alguma tarefa. No experimento uma fita de led colorida foi adicionado a um AGV. A cor e a intensidade da fita de led foi utilizada para demonstrar o sentimento do robô. Dessa maneira o time de resgate conseguia saber se o robô precisa, ou não de ajuda.
 
 %A liberdade do robô conseguir se expressar sem necessariamente ser antropomórfico é importante pois, como lembrado em \cite{habib2011} robôs de busca e salvamento são uma classe especial de robôs sociais por operarem em ambientes inóspitos. Dessa maneira o equipamento deve estar adaptado a sua missão: adentrar espaços confinados com dimensões muito estreitas, voo em áreas restritas, percorrer tubos, movimentação em terreno acidentado, capacidade de ascensão e descida verticais etc... E utilizar de alguns componentes para o aspecto de comunicação não verbal.
 
@@ -311,7 +314,7 @@ O modelo de robô a ser desenvolvido deverá atender os seguintes requisitos:
 
 \subsection{Aparência}
 
-Como dito em \cite{Robin2004} robôs de busca e salvamento são uma subdivisão especial de robôs sociais. Junto com robôs militares e robôs que integram grupos policiais estão sujeitos a um ambiente inóspito, e visam sobretudo remover o ser humano de condições perigosas. Dessa maneira ao contrário de robôs para acompanhar pessoas, ou prestar algum conforto médico sua aparência está muito ligada as suas capacidades: movimentação em terreno acidentado, percorrer tubos, voo em espaços confinados. Por sorte como visto em \cite{akgun2022using} e \cite{fin2004} poucos elementos já são capazes de aumentar o inteiração homem-máquina. Dessa maneira a aparência do robô será funcional como visto na figura \ref{figure:robo_wotc} com apenas um adereço que permita os operadores saberem qual a frente, ou a direção preferencial do deslocamento do robô, e uma fita de led capaz de comunicar o status de operação.
+Como dito em \cite{Robin2004} robôs de busca e salvamento são uma subdivisão especial de robôs sociais. Junto com robôs militares e robôs que integram grupos policiais estão sujeitos a um ambiente inóspito, e visam sobretudo remover o ser humano de condições perigosas. Dessa maneira ao contrário de robôs para acompanhar pessoas, ou prestar algum conforto médico, sua aparência está muito ligada as suas capacidades: movimentação em terreno acidentado, percorrer tubos, voo em espaços confinados.Dessa maneira, a aparência do robô será funcional, como visto na figura \ref{figure:robo_wotc}, com uma fita de led que comunicará o sentimento do robô no momento.
 
 \begin{figure}
 \centering
@@ -338,9 +341,9 @@ O diagrama apresentado em \ref{figure:componentes} se difere do diagrama exibido
 
 \subsection{Arquitetura}
 
-Dado o diagrama apresentado na figura \ref{figure:componentes} tem-se que escolher uma arquitetura para implementar o modelo proposto. Em \cite{kotseruba202040} são apresentadas diversas arquiteturas e o seu emprego. Selecionamos a arquitetura 4D/RCS pois ela apresenta as seguintes capacidades necessárias ao nosso modelo.
+Dado o diagrama apresentado na figura \ref{figure:componentes} foi escolhida uma arquitetura para implementar o modelo proposto. Em \cite{kotseruba202040} são apresentadas diversas arquiteturas e o seu emprego. Selecionamos a arquitetura 4D/RCS pois ela apresenta as seguintes capacidades necessárias ao nosso modelo.
 
-Um sistema robusto para construir um modelo do mundo a partir dos sensores do robô. A arquitetura 4D/RCS foi desenvolvida para aplicações em ambientes adversos, por isso, um de seus principais componentes é a capacidade de mapear o ambiente a partir dos sensores do robô.
+Um sistema robusto para construir um modelo de mundo a partir dos sensores do robô. A arquitetura 4D/RCS foi desenvolvida para aplicações em ambientes adversos, por isso, um de seus principais componentes é a capacidade de mapear o ambiente a partir dos sensores do robô.
 
 Junto com seu elemento de construção de mundo a arquitetura possui um componente capaz de aprender. Que tanto vai ser populado com o mapa da planta antes do desabamento, bem como o mapa que será gerado pelo robô enquanto executa a sua missão. 
 
@@ -355,7 +358,9 @@ Por fim, os elementos da geração de comportamento. Após a análise de custo e
   \label{figure:arquitetura}
 \end{figure}
 
+\section{Conclusão}
 
+Equipes SAR podem se beneficiar de agentes robóticos cognitivos, seja com o aumento da autonomia do agente, e consequente redução da carga cognitiva de seus operadores, seja com maior aumento do relacionamento homem-robô, tornando a equipe mais eficiente. Ainda que possuam restrições quando a aparência, foco na missão, pequenos ajustes e treinamento da equipe representam ganhos significativos na inteiração homem-robô. Mais estudos são necessários quanto ao relacionamento do robô com as vítimas. 
 
 
 \postextual
